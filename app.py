@@ -1,7 +1,5 @@
-from logging import shutdown
 import mysql.connector
-from flask import Flask, request
-import atexit
+from flask import Flask
 
 
 app = Flask(__name__)
