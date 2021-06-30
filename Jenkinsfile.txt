@@ -7,12 +7,12 @@ pipeline {
         stage('1-Build') {
             steps {
                 sh "pip3 install -r requirements.txt"
-                echo "Running pip3"
+                echo "-----------------------------------Running pip3-----------------------------------------"
             }
         }
         stage('2-Run') {
             steps {
-                echo "Run app"
+                echo "-----------------------------------Run app-----------------------------------------------"
                 sh "python3 -m flask run --host=0.0.0.0"
             }
         }
