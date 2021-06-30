@@ -4,10 +4,9 @@ import atexit
 
 
 app = Flask(__name__)
-def OnExitApp():
-    print("Exit Python application")
 
-atexit.register(OnExitApp, user='redheaven')
+
+
 
 @app.route('/')
 def coffee():
@@ -48,4 +47,3 @@ def db_init():
 
 if __name__ == "__main__":
   app.run(host ='0.0.0.0', threaded=True)
-shutdown
