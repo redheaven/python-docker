@@ -13,7 +13,7 @@ pipeline {
         stage('2-Run') {
             steps {
                 echo "-----------------------------------Run app-----------------------------------------------"
-                sh "python3 app.py -m flask run "
+                sh "python3 -m flask run "
             }
         }
     }
