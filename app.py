@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 user = 'admin'
 pwd = 'Start!123'
@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/", methods=['GET','POST'])
 def index():
 	return "Welcome to the flask world!"
-@app.route('/login/', methods=['post', 'get'])
+@app.route("/login/", methods=['POST', 'GET'])
 def login():
     message = ''
     if request.method == 'POST':
