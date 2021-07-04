@@ -19,5 +19,6 @@ pipeline {
         stage('3-Stop') {
         steps {
             sh "pkill -f python3"
+            }
     }
 }
