@@ -14,7 +14,7 @@ pipeline {
         stage('2-Run') {
             steps {
                 echo "-----------------------------------Run app-----------------------------------------------"
-                sh "python3 -m flask run --host=127.0.0.1"
+                sh "python3 app.py"
             }
         }
     }
