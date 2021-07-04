@@ -5,15 +5,9 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/", methods=['GET','POST'])
 def coffee():
-  mydb = mysql.connector.connect(
-    host="db",
-    user="root",
-    password="p@ssw0rd1",
-    database="inventory"
-  )
-  return "It's time to coffee"
+	return "It's time to coffee"
 
 
 @app.route('/initdb')
