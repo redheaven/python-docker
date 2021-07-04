@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "-----------------------------------Running pip3-----------------------------------------"
                 sh "pip3 install -r requirements.txt"
-                sh "mysql -MYSQL_ROOT_PASSWORD=p@ssw0rd1 -e"
+                sh "mysql -uUSERNAME -pPASSWORD -hHOSTNAME -P3306 -e \'DROP DATABASE IF EXISTS dbname -e \' \'use dbanme -e \' "
 
             }
         }
