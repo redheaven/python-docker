@@ -8,7 +8,6 @@ pipeline {
             steps {
                 echo "-----------------------------------Running pip3-----------------------------------------"
                 sh "pip3 install -r requirements.txt"
-                sh "mysql -uUSERNAME -pPASSWORD -hHOSTNAME -P3306 -e \'DROP DATABASE IF EXISTS dbname -e \' \'use dbanme -e \' "
 
             }
         }
@@ -17,11 +16,6 @@ pipeline {
                 echo "-----------------------------------Run app-----------------------------------------------"
                 sh "python3 -m flask run --host=127.0.0.1"
                 sh "pkill -f python3"
-            }
-        }
-        stage('3-Stop') {
-        steps {
-            sh "pkill -f python3"
             }
         }
     }
