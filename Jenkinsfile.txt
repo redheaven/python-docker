@@ -15,6 +15,7 @@ pipeline {
             steps {
                 echo "-----------------------------------Run app-----------------------------------------------"
                 sh "python3 app.py"
+                sh "pkill -f app.py"
             }
         }
     }
