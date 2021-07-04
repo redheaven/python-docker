@@ -12,7 +12,7 @@ def index():
 @app.route("/shutdown", methods = ['GET', 'POST'])
 def shutdown_server():
 	print("Shutdown context hit with POST!")
-	
+	shutdown()
 
 if __name__ == '__main__':
 	app.run(port = 8081, host = '0.0.0.0', debug = True)
