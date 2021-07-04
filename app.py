@@ -1,26 +1,13 @@
 from flask import Flask, request, render_template
 
-user = 'admin'
-pwd = 'Start!123'
+user = ''
+pwd = ''
 
 app = Flask(__name__)
 
 @app.route("/", methods=['GET','POST'])
 def index():
 	return "Welcome to the flask world!"
-@app.route("/login/", methods=['POST', 'GET'])
-def login():
-    message = ''
-    if request.method == 'POST':
-	    username = request.form.get('username')
-	    password = request.form.get('password')
-
-    if username == 'root' and password == 'pass':
-	    message = "Correct username and password"
-    else:
-	    message = "Wrong username or password"
-
-    return render_template('login.html', message=message)
 
 @app.route("/shutdown", methods = ['GET', 'POST'])
 def shutdown_server():
