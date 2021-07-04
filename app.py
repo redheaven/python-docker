@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
 	return "Welcome to the flask world!"
 
-@app.route("/shutdown", methods = ['POST'])
+@app.route("/shutdown", methods = ['GET', 'POST'])
 def shutdown_server():
 	print("Shutdown context hit with POST!")
 	if request.form.get('username') and request.form.get('password'):
