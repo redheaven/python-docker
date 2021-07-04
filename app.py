@@ -40,8 +40,16 @@ def db_init():
   cursor.execute("DROP TABLE IF EXISTS widgets")
   cursor.execute("CREATE TABLE widgets (name VARCHAR(255), description VARCHAR(255))")
   cursor.close()
+  
 
   return 'Here is nothing to do'
 
+@app.route('/quit')
+def quit():
+    shutdown_hook = request.environ.get('werkzeug.server.shutdown')
+    if shutdown_hook is not None:
+         shutdown_hook()
+         return "Bye"
+    return "No shutdown hook"
 if __name__ == "__main__":
   app.run(host ='0.0.0.0')
