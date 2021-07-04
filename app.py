@@ -1,23 +1,23 @@
-from flask import Flask, request, render_template
+from flask import Flask, request
 
-user = ''
-pwd = ''
+user = 'admin'
+pwd = 'Start!123'
 
 app = Flask(__name__)
 
 @app.route("/", methods=['GET','POST'])
 def index():
-	return "Welcome to the flask world!"
+	return "Welcome world!"
 
 @app.route("/shutdown", methods = ['GET', 'POST'])
 def shutdown_server():
 	print("Shutdown context hit with POST!")
-	if request.args.get('username') and request.args.get('password'):
-		print('Got username: {} and password: {}'.format(request.args.get('username'),request.args.get('password')))
-		if request.args.get('username') != user:
+	if request.form.get('username') and request.form.get('password'):
+		print('Got username: {} and password: {}'.format(request.form.get('username'),request.form.get('password')))
+		if request.form.get('username') != user:
 			return 'The username or password is incorrect!'
 
-		if request.args.get('password') != pwd:
+		if request.form.get('password') != pwd:
 			return 'The username or password is incorrect!'
 
 		print("It seems to be valid, the server is shutting down!")
