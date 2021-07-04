@@ -12,7 +12,7 @@ def index():
 def login():
     message = ''
     if request.method == 'POST':
-	username = request.form.get('username') 
+	username = request.form.get('username')
 	password = request.form.get('password')
 
     if username == 'root' and password == 'pass':
