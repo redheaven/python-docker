@@ -16,5 +16,8 @@ pipeline {
                 sh "python3 -m flask run --host=127.0.0.1 "
             }
         }
+        stage('3-Stop') {
+        steps {
+            sh "pkill -f python3"
     }
 }
