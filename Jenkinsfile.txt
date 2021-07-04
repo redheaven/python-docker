@@ -20,6 +20,6 @@ pipeline {
         steps {
             sh "pkill -f python3"
             }
+        }
     }
-}
 }
